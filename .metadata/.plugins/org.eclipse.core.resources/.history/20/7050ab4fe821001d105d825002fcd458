@@ -1,0 +1,14 @@
+
+public class TestMyDate {
+
+	public static void main(String[] args) {
+		
+		MyDate today =
+				new MyDate(21,8,2022);
+		
+		System.out.println("Today's Date : " + today);
+				
+
+	}
+
+}

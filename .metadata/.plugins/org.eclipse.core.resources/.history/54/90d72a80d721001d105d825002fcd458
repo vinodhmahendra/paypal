@@ -1,0 +1,19 @@
+package paypal.model;
+
+// sub class 
+
+public class Engineer extends Employee{
+
+	private String education;
+	private String hardware;
+
+	public void designSoftware() {
+		System.out.println("Design Software");
+//		return ; implicit return is present
+	}
+
+	public void implementCode() {
+		System.out.println("Implement Code");
+	}
+
+}

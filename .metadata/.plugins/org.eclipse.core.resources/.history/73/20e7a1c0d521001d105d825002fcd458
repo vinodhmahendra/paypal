@@ -1,0 +1,21 @@
+package paypal.client;
+
+import paypal.model.Engineer;
+
+public class Application {
+
+	public static void main(String[] args) {
+		System.out.println("Welcome to OOPS!");
+		
+		//create an object of Engineer
+		//syntax : CLassName variable = new ClassName();
+		Engineer employee = new Engineer();
+		
+		
+		
+		employee.increaseSalary(10000);
+		employee.designSoftware();
+		employee.implementCode();
+	}
+
+}

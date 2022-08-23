@@ -1,0 +1,35 @@
+package paypal.client;
+
+import paypal.model.Engineer;
+import paypal.model.Manager;
+
+public class Application {
+
+	public static void main(String[] args) {
+		System.out.println("Welcome to OOPS!");
+		
+		//create an object of Engineer
+		//syntax : CLassName variable = new ClassName();
+		Engineer employee = new Engineer();
+		employee.setFirstName("Fred");
+		employee.setLastName("Cartz");
+		employee.setSalary(47000.00);
+		
+		
+		employee.increaseSalary(10000);
+		employee.designSoftware();
+		employee.implementCode();
+		
+		System.out.println("First Name: " + employee.getFirstName());
+		System.out.println("Last Name: " +employee.getLastName());
+		System.out.println("Salary: "+employee.getSalary());
+		
+		
+		Manager manager = new Manager();
+		manager.setFirstName("Clarence");
+		manager.setLastName("Tauro");
+		manager.setSalary(470000);
+		
+	}
+
+}

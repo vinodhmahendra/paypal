@@ -1,0 +1,49 @@
+package paypal.model;
+
+public class Engineer {
+	
+	private String fname;
+	private String lname;
+	private double salary;
+	
+	
+	
+	
+	public String getFirstName() {
+		return fname;
+	}
+
+	public void setFirstName(String fname) {
+		this.fname = fname;
+	}
+
+	public String getLastName() {
+		return lname;
+	}
+
+	public void setLastName(String lname) {
+		this.lname = lname;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+
+	void increaseSalary(double amt) {
+		System.out.println("increase salary : " + amt);
+	}
+	
+	void designSoftware() {
+		System.out.println("Design Software");
+//		return ; implicit return is present
+	}
+	
+	void implementCode() {
+		System.out.println("Implement Code");
+	}
+
+}

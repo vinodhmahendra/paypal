@@ -1,0 +1,5 @@
+package paypal.interfaces;
+
+public interface SimpleInterface {
+
+}

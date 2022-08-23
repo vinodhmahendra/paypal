@@ -1,0 +1,12 @@
+package paypal.model;
+
+public class Engineer {
+	
+	String fname;
+	String lname;
+	double salary;
+	
+	
+	
+
+}

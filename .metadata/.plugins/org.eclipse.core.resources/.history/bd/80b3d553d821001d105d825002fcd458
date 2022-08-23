@@ -1,0 +1,12 @@
+package paypal.model;
+
+public class Manager extends Employee{
+
+	private double quarterlyBonus;
+	
+	// method overiding
+	@Override
+	public void  increaseSalary(double amt)  {
+		
+	}
+}

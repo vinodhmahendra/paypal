@@ -1,0 +1,40 @@
+package paypal.model;
+
+// sub class 
+
+public class Engineer extends Employee{
+
+	@Override
+	public void increaseSalary(double amt) {
+		System.out.println("increase salary : Employee Class");
+		
+	}
+	private String education;
+	private String hardware;
+
+	public String getEducation() {
+		return education;
+	}
+
+	public void setEducation(String education) {
+		this.education = education;
+	}
+
+	public String getHardware() {
+		return hardware;
+	}
+
+	public void setHardware(String hardware) {
+		this.hardware = hardware;
+	}
+
+	public void designSoftware() {
+		System.out.println("Design Software");
+//		return ; implicit return is present
+	}
+
+	public void implementCode() {
+		System.out.println("Implement Code");
+	}
+
+}

@@ -1,0 +1,26 @@
+package paypal.demos;
+
+public class ApplicationGenericsClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+//generic class
+class SampleClass <T> {
+	
+	//variable of T type
+	private T data;
+	
+	public SampleClass(T data) {
+		this.data = data;
+	}
+	
+	public T getData() {
+		return data;
+	}
+	
+}

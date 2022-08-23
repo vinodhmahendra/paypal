@@ -1,0 +1,16 @@
+package paypal.client;
+
+public class UseRunnable {
+	
+	public static void main(String[] args) {
+		
+		Runnable r1 = ()-> {
+			try {
+				Thread.sleep(3000);
+			}catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+}
