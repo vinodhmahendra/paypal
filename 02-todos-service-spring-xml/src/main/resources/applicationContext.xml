@@ -9,12 +9,12 @@
     
 
 	<!-- configure the service bean -->
-	<bean id="todoService" class="paypal.services.TodoServiceImpl">
+	<bean id="todoService" class="paypal.services.TodoServiceImpl" autowire="constructor">
 	
 		<!-- assembly  -->
 		<!-- setter dependency injetion -->
 		<!-- <property name="todoRepository" ref="todoRepository"/> -->
 		<!-- constructor dependency injection -->
-		<constructor-arg name="todoRepository" ref="todoRepository"/>
+		<!-- <constructor-arg name="todoRepository" ref="todoRepository"/> -->
 	</bean>
 </beans>

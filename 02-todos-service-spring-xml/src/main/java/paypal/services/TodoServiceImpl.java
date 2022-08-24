@@ -11,6 +11,10 @@ public class TodoServiceImpl implements TodoService
 	
 	private TodoRepository todoRepository ;
 	
+	public TodoServiceImpl() {
+		System.out.println("spring container invokes  default constructor");
+	}
+	
 	public TodoServiceImpl(TodoRepository todoRepository) {
 		System.out.println("spring container invoked constructor method to inject 'todoRepository' bean");
 		this.todoRepository = todoRepository;
