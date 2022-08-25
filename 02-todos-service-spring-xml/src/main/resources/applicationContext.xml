@@ -9,7 +9,7 @@
     
 
 	<!-- configure the service bean -->
-	<bean id="todoService" class="paypal.services.TodoServiceImpl" autowire="constructor">
+	<bean id="todoService" class="paypal.services.TodoServiceImpl" autowire="constructor" scope="prototype">
 	
 		<!-- assembly  -->
 		<!-- setter dependency injetion -->
