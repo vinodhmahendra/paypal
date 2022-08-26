@@ -1,12 +1,19 @@
 package paypal.repository;
 
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.stereotype.Repository;
 
 import paypal.model.Todo;
@@ -37,8 +44,25 @@ public class TododRepositoryImpl implements TodoRepository {
 
 	@Override
 	public Todo save(Todo theTodo) {
-		//Assigment
-		return null;
+		GeneratedKeyHolder holder = new GeneratedKeyHolder();
+		
+		jdbcTemplate.update(new PreparedStatementCreator() {
+			
+			@Override
+			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+				PreparedStatement statement =
+						con.prepareStatement("insert into todos(username,description,target_date,is_done) values(?,?,?,?)"+ "",Statement.RETURN_GENERATED_KEYS);
+				statement.setString(1, theTodo.getUsername());
+				statement.setString(2, theTodo.getDescription());
+				statement.setDate(3,new Date(10) );
+				statement.setBoolean(4, false);
+				return statement;
+			}
+		},holder);
+		
+		long primarykey = holder.getKey().longValue();
+		
+		return findById(primarykey);
 	}
 
 	@Override
@@ -54,7 +78,7 @@ public class TododRepositoryImpl implements TodoRepository {
 		theTodo.setId(rs.getInt("id"));
 		theTodo.setUsername(rs.getString("username"));
 		theTodo.setDescription(rs.getString("description"));
-		theTodo.setTargetDate(rs.getDate("targetDate"));
+		theTodo.setTargetDate(rs.getDate("target_date"));
 		theTodo.setDone(rs.getBoolean("is_done"));
 		return theTodo;
 	};
